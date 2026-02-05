@@ -1,0 +1,58 @@
+# TIL: Single Board Computers, Anaconda Environments, and Git Essentials
+
+## 📅 Date: February 5, 2026
+## [cite_start]📝 Summary: Documentation from Lecture 02 (RPI, Git, GitHub, and Wiki) [cite: 1]
+
+---
+
+### 1. Introduction to Single Board Computers (SBC)
+* [cite_start]**Definition:** A complete computer built on a single circuit board[cite: 10].
+* [cite_start]**Components:** Includes a processor, memory, storage, and various input/output options in one compact package[cite: 11].
+* [cite_start]**Advantages:** Affordable compared to traditional PCs [cite: 12][cite_start], consumes low power [cite: 14][cite_start], and is versatile enough for education or industrial use[cite: 13].
+* [cite_start]**Popular Examples:** Common SBCs include Raspberry Pi, Orange Pi, and BeagleBone Black[cite: 16, 17, 18, 21].
+
+#### 🚀 Focus: Raspberry Pi Zero 2 W
+* [cite_start]**Specifications:** Features a Quad-core ARM Cortex-A53 (1GHz) processor and 512 MB LPDDR2 memory[cite: 22].
+* [cite_start]**Connectivity:** Supports Wi-Fi (802.11 b/g/n) and Bluetooth 4.2[cite: 22].
+* [cite_start]**Physical Interface:** Includes 40 GPIO pins, Mini HDMI for display, and a microSD card slot for the OS[cite: 22].
+* [cite_start]**Portability:** Smaller than a credit card (65mm x 30mm) [cite: 22][cite_start], making it ideal for embedded AI projects[cite: 23].
+
+---
+
+### 2. Software Development with Anaconda
+* [cite_start]**Overview:** A free, open-source distribution designed for Python and R programming[cite: 51, 54].
+* [cite_start]**Purpose:** Simplifies package management and deployment for Data Science and Machine Learning[cite: 55, 56].
+* [cite_start]**Virtual Environments:** Acts as an isolated workspace[cite: 215].
+* [cite_start]**Environment Benefits:** Allows for different Python and library versions in separate projects [cite: 217, 218] [cite_start]and prevents software version conflicts[cite: 222].
+* [cite_start]**Key Tools:** Includes "Conda" for package/environment management [cite: 69][cite_start], "Anaconda Navigator" as a GUI [cite: 70][cite_start], and development environments like Jupyter Notebook and Spyder[cite: 72, 73].
+
+---
+
+### 3. Version Control with Git
+* [cite_start]**What is Git?** A Version Control System (VCS) that tracks changes in files over time[cite: 257, 259].
+* [cite_start]**Core Functions:** Keeps a history of changes [cite: 250][cite_start], allows rollback to previous versions [cite: 254][cite_start], and facilitates collaboration[cite: 253].
+* **Common Terminology:**
+    * [cite_start]**Repository (repo):** A project folder tracked by Git[cite: 264].
+    * [cite_start]**Commit:** A snapshot of changes[cite: 265].
+    * [cite_start]**Branch:** An independent line of development[cite: 266, 297].
+* **The Basic Workflow:**
+    1. [cite_start]**Edit:** Modify files in the working directory[cite: 271, 279].
+    2. [cite_start]**Stage:** Use `git add` to prepare changes for a commit[cite: 283, 292].
+    3. [cite_start]**Commit:** Use `git commit` to save the snapshot locally[cite: 284, 293].
+    4. [cite_start]**Push:** Upload local changes to a remote server like GitHub[cite: 275, 294].
+
+---
+
+### 4. Collaboration with GitHub
+* [cite_start]**Definition:** A cloud-based hosting service for Git repositories[cite: 315].
+* [cite_start]**Key Features:** Includes Pull Requests for proposing changes [cite: 337][cite_start], Issues for tracking bugs [cite: 338][cite_start], and Forks for creating personal copies of projects[cite: 339].
+* [cite_start]**Student Benefits:** Helps build a public portfolio for jobs [cite: 452][cite_start], provides industry-relevant skills [cite: 447][cite_start], and organizes project history[cite: 450].
+
+---
+
+### ✍️ Documentation via Markdown
+* [cite_start]**Format:** Markdown is a lightweight formatting language using simple symbols like `#`, `*`, and `-`[cite: 426, 428].
+* **Standard Files:**
+    * [cite_start]`README.md`: The main project description and usage guide[cite: 431, 434].
+    * [cite_start]`CONTRIBUTING.md`: Rules for others to contribute to the project[cite: 435, 436].
+    * [cite_start]`LICENSE`: Legal terms for usage[cite: 437].
