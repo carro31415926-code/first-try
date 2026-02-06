@@ -1,3 +1,40 @@
-how ML wark
-2 type of it: supervised and unsupervised
-what they do : regression and classification for supervised,clustering and dimensioality reduction for unsuoervised
+# TIL: Machine Learning Basics & Algorithms
+
+## how ML wark
+- 2 type of it: supervised and unsupervised
+- what they do:
+- supervised: regression (predict numbers, like price) & classification (predict categories, like "spam")
+- unsupervised: clustering (grouping things) & dimensionality reduction (simplify data)
+
+## supervised: regression vs classification
+- regression: predict continuous value (e.g., predict IMU roll angle)
+- classification: predict discrete value (e.g., Class A or Class B)
+- Logistic Regression: don't let the name fool u, it's actually for binary classification
+
+## the "all-rounders" (can do both)
+some algos are cool and solve both regression & classification:
+- Decision Tree:
+- tree structure with nodes (rules) and leaves (results)
+- pros: easy to understand
+- cons: easy to overfit (needs normalization)
+- Random Forest:
+- a "forest" of many decision trees
+- use "majority vote" (classification) or "averaging" (regression)
+- much more robust than a single tree
+- k-NN (k-Nearest Neighbors):
+- find 'k' closest neighbors to decide
+- no "training" phase, just memorizes the whole dataset
+- Neural Networks:
+- inspired by brain neurons
+- layers: Input -> Hidden -> Output
+- "Backpropagation" is how it learns by adjusting weights to minimize error
+
+## semi-supervised: the middle ground
+- what: hybrid of supervised + unsupervised
+- when to use: u have a tiny bit of labeled data but a ton of unlabeled data
+- how: train a model on labeled data -> predict "pseudo-labels" for the rest -> retrain together
+
+## real-world apps (from the lab)
+- UAV (Drones): using CNN/MLP to predict orientation or flight maneuvers
+- HAR (Human Activity Recognition): using Decision Trees or 1D-CNN to tell if u r walking, sitting, or falling
+- IMU Data: using regression to correct sensor noise and drift
