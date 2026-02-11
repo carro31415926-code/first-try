@@ -1,0 +1,43 @@
+# TIL: Keyword Spotting (KWS) in Embedded Machine Learning
+
+## 1. What is Keyword Spotting (KWS)?
+* [cite_start]**Definition**: A subfield of speech recognition focused on detecting specific, pre-defined words or phrases (e.g., "Hey Siri", "Alexa") within a continuous stream of audio[cite: 4, 9].
+* [cite_start]**TinyML Success**: KWS is one of the most successful examples of TinyML because it is low-power, continuous, and runs entirely on-device[cite: 18, 19].
+* [cite_start]**KWS vs. General ASR**: While General Automatic Speech Recognition (ASR) requires large, power-hungry models, KWS models are lightweight and optimized for edge devices[cite: 20].
+
+## 2. The KWS Pipeline: From Audio to Action
+
+1.  [cite_start]**Audio Input**: Continuous speech stream[cite: 6].
+2.  [cite_start]**Feature Extraction**: Converting raw audio into digital features like Spectrograms or MFCCs[cite: 7].
+3.  [cite_start]**KWS Model**: A TinyML Neural Network trained on specific keywords[cite: 8, 9].
+4.  [cite_start]**Detection Logic**: A threshold check where a match is found if Probability > Threshold[cite: 10, 11].
+5.  [cite_start]**Trigger Action**: Executing a command or waking up a voice assistant[cite: 13, 14, 16].
+
+## 3. Audio Data Specifications
+* [cite_start]**Digital Format**: Audio files store acoustic waves as a series of binary numbers ($0$s and $1$s)[cite: 25].
+* [cite_start]**Standard KWS Specs**: Typically uses a sampling rate of **16 kHz** and a **16-bit** depth[cite: 101, 102].
+* [cite_start]**Nyquist-Shannon Theorem**: To avoid aliasing, the sampling frequency ($f_s$) must be greater than twice the highest frequency component ($B$), expressed as $f_s > 2B$[cite: 146, 149, 151].
+* [cite_start]**Dataset**: The **Speech Commands Dataset** is a standard, featuring 1-second samples of individual words recorded by over 2,500 volunteers[cite: 105, 106, 109, 133].
+
+## 4. Feature Extraction Techniques
+
+### Spectrograms
+* [cite_start]**Visual Representation**: A heatmap showing how frequency components change over time[cite: 142, 392].
+* [cite_start]**CNN Compatibility**: Convolutional Neural Networks (CNNs) treat spectrograms like images, searching for "edges" and "shapes"[cite: 243, 259].
+* [cite_start]**Constraint**: Requires higher data dimensions and larger models[cite: 385, 394].
+
+### Mel Frequency Cepstral Coefficients (MFCCs)
+* [cite_start]**Human-Centric**: Mimics the human ear (Mel Scale), which is better at distinguishing low frequencies than high frequencies[cite: 301, 302].
+* [cite_start]**The Process**: Includes Pre-emphasis $\rightarrow$ FFT $\rightarrow$ Mel Filterbank $\rightarrow$ Logarithm $\rightarrow$ Discrete Cosine Transform (DCT) [cite: 411-435].
+* [cite_start]**Pros**: Highly compressed (usually ~13 coefficients), making it fit easily into TinyML models (DNN/LSTM)[cite: 397, 399, 400].
+* [cite_start]**Cons**: The DCT step "scrambles" the spatial relationship of frequencies, making it harder for CNNs to find visual shapes compared to raw spectrograms[cite: 367, 368].
+
+## 5. Challenges and Constraints in Embedded ML
+[cite_start]Embedded KWS systems must operate under strict hardware limitations[cite: 60]:
+* [cite_start]**Memory**: Devices are resource-constrained; models often must fit within very small RAM footprints (e.g., < 128KB total usage including audio buffers and application code)[cite: 68, 69, 78].
+* [cite_start]**Power**: Must often operate on coin-cell batteries, requiring extreme energy efficiency[cite: 67].
+* [cite_start]**Latency**: Results must be provided in real-time to ensure a good user experience[cite: 61].
+* [cite_start]**Privacy**: Data is processed on-device to safeguard user security and minimize bandwidth costs[cite: 62, 66].
+
+---
+**Next Step**: Would you like me to explain the mathematical difference between a standard Fourier Transform and the Mel-spaced filterbank used in MFCCs?
