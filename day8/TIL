@@ -1,0 +1,29 @@
+# TIL: IoT Data Pipelines with MQTT and Data Engineering Principles
+
+Today I explored the implementation of an end-to-end IoT data pipeline using the MQTT protocol and studied the foundational stages of data engineering.
+
+## 1. The MQTT Communication Model
+Unlike traditional "polling," MQTT uses a "Push" model that decouples the data source from the consumer.
+* **Publishers:** Devices like the M5Stack Core2 read sensor data and publish it to a specific topic.
+* **Broker:** A central hub (e.g., Mosquitto on a Raspberry Pi) receives and routes messages to active listeners.
+* **Subscribers:** Backend systems or Python scripts subscribe to topics to receive data instantly for storage or analysis.
+
+## 2. Hardware Interface: M5Stack Core2 & AHT20
+I learned to interface an AHT20 sensor using the M5Core2's Port A (Red Grove Port), which utilizes I2C communication.
+* **SDA Mapping:** GPIO 32.
+* **SCL Mapping:** GPIO 33.
+* **Power:** The sensor operates within 2.0V - 5.5V, typically connected to the 5V pin on the Core2.
+
+## 3. MQTT Broker Configuration (Mosquitto)
+Setting up a Mosquitto broker on Raspberry Pi involves enabling remote access to allow the M5Core2 to connect over Wi-Fi.
+* **Installation:** `sudo apt install mosquitto mosquitto-clients -y`.
+* **Remote Access:** Configure `listener 1883` and set `allow_anonymous true` in the configuration file to permit external connections.
+* **Verification:** Use `ss -tulpn | grep 1883` to ensure the broker is actively listening for traffic.
+
+## 4. Data Engineering & Pre-processing
+Data engineering is the process of transforming raw data into a structured, usable format. 
+* **Time Allocation:** Data scientists spend more than 50% of their time on data pre-processing.
+* **Common Pre-processing Steps:**
+    * **Handling Missing Values:** Removing or imputing absent data points.
+    * **Outlier Detection:** Treating extreme values to prevent skewed models.
+    * **Smoothing:** Using moving averages or low-pass filters
